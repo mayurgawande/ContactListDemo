@@ -1,0 +1,68 @@
+.table-class{
+    margin-top:20px;
+}
+.container{
+    position: absolute;
+    top:25px;
+    
+}
+
+.inp {
+  position: relative;
+  margin: auto;
+  width: 50px;
+  max-width: 280px;
+}
+.inp .label {
+
+  position: absolute;
+  top: 11px;
+  left: 0;
+  font-size: 13px;
+  color: #9098a9;
+  font-weight: 400;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+}
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  
+  background: #07f;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
+.inp input {
+    -webkit-appearance: none;
+    width: 280px;
+    border: 0;
+    font-family: inherit;
+    padding: 10px 0;
+    height: 10px;
+    font-size: 30px;
+    font-weight: 500;
+    border-bottom: 2px solid #c8ccd4;
+    background: none;
+    border-radius: 0;
+    color:#07f;
+   transition: all 0.15s ease;
+}
+
+.inp input:not(:placeholder-shown) + span {
+  color: #5a667f;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus {
+  background: none;
+  outline: none;
+}
+.inp input:focus + span {
+  color: #07f;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus + span + .border {
+  transform: scaleX(1);
+}

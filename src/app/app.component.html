@@ -1,0 +1,67 @@
+<div class="container">
+  
+    <label for="inp" class="inp">
+      <input type="text" [(ngModel)]="str" class="input">
+      <span class="label">Search by First name,Last name</span>
+      <span class="border"></span>
+    </label>
+    
+    <table border="1" class="table-class">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Status</th>
+        <th>Action1</th>
+        <th>Action2</th>
+      </tr>
+      <tr *ngFor="let contact of contactList | customPipe : str;let i = index">
+        <td>
+          <input type="text" placeholder="Contact FName" [(ngModel)]="contact.firstName">
+        </td>
+        <td>
+          <input type="text" placeholder="Contact FName" [(ngModel)]="contact.lastName">
+        </td>
+        <td>
+          <input type="text" placeholder="Contact FName" [(ngModel)]="contact.email">
+        </td>
+        <td>
+          <input type="text" placeholder="Contact FName" [(ngModel)]="contact.phoneNumber">
+        </td>
+        <td>
+          <input type="text" placeholder="Contact FName" [(ngModel)]="contact.status">
+        </td>
+        <td>
+          <input type="button" value="Remove" (click)="removeContact(i)">
+        </td>
+  
+        <td>
+          <input type="button" value="Update" (click)="updateContact(contact,i)">
+        </td>
+      </tr>
+      <tr>
+  
+        <td>
+          <input type="text" placeholder="Contact FName" [(ngModel)]="newcontact.firstName">
+        </td>
+        <td>
+          <input type="text" placeholder="Contact lName" [(ngModel)]="newcontact.lastName">
+        </td>
+        <td>
+          <input type="text" placeholder="Email" [(ngModel)]="newcontact.email">
+        </td>
+        <td>
+          <input type="number" placeholder="Phone Number" [(ngModel)]="newcontact.phoneNumber">
+        </td>
+        <td>
+          <input type="text" placeholder="Status" [(ngModel)]="newcontact.status">
+        </td>
+        <td>
+          <input type="button" value="Add" (click)="addContact(newcontact)">
+        </td>
+  
+      </tr>
+    </table>
+  
+  </div>
